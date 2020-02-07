@@ -14,4 +14,10 @@ public class MyController {
         return " fuck the world";
     }
 
+ @RequestMapping("/fuckyou")
+    @ResponseBody
+    public String fuckyou(){
+        return " fuck the you";
+    }
+
 }

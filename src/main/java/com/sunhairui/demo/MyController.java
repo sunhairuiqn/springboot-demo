@@ -16,30 +16,6 @@ import java.io.FileOutputStream;
 @Controller
 public class MyController {
 
-    @Value("${app.upload.directory}")
-    private String path;
-
-
-    @RequestMapping("/")
-    public String out(){
-        System.out.println("hot deploy");
-        System.out.println("what the fuck ? ");
-
-        return "index";
-    }
-
-    @PostMapping("/upload")
-    @ResponseBody
-    public String upload(@RequestParam(value = "photo",required = true) MultipartFile file) throws Exception {
-        String fileName = file.getOriginalFilename();
-        FileCopyUtils.copy(file.getInputStream(),new FileOutputStream(new File(path+fileName)));
-        return path+fileName;
-    }
-
-    @RequestMapping("/fuck")
-    public String fuck(){
-        throw new RuntimeException("fuck");
-    }
 
 
 }
